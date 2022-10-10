@@ -1,0 +1,245 @@
+.header{
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+
+}
+
+  
+ .Navbar{
+    display: flex;
+    flex-direction: column;
+
+    background: #251f1f;
+    width: 100%;
+    transition: all .4s ease;
+   
+  
+
+ }
+    
+
+
+
+
+
+.navBarBrand{
+    margin: 1vmax auto;
+    
+}
+
+
+.navBarBrand > img{
+   
+    max-width: 12vmax;
+}
+
+
+
+
+.header-tag-line {
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Roboto Slab',serif;
+ position: relative;
+ top:1.5vmax;
+ left:0.3vmax;
+   
+}
+
+
+.searchButton{
+    background-color: white;
+   border: none;
+   margin-top: 1vmax;
+}
+
+.firstRow{
+    list-style: none;
+    display: flex;
+ 
+    margin-left: 2vmax;
+}
+
+.firstRow>li{
+    
+    margin-top: 1vmax;
+    margin-left:1vmax;
+    color: white;
+}
+
+.firstRow>li span{
+    margin-left: 1vmax;
+    font-weight: 500;
+
+}
+
+ul.firstRow span{
+   
+    text-decoration-line: none;
+    color: white;
+}
+
+.contactInfor{
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1vmax;
+   margin-left: 1.3vmax;
+   
+}
+.contactInfor>span{
+    color: #f4ae1a;
+    font-weight: 500;
+    font-size: 1.4vmax;
+    font-family: 'Roboto Slab',serif;
+    margin-left:0.5vmax;
+}
+
+.contactInfor > span a{
+    text-decoration: none;
+    color: #f4ae1a;
+    font-family: 'Roboto Slab',serif;
+    font-size: 1vmax;
+    
+}
+
+.secondCol{
+
+  
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+  
+    
+}
+
+
+
+
+.secondNavbarRow{
+
+    background-color: #f4ae1a;
+
+    width: 100%;
+    align-self:center;
+    
+}
+
+.secondNavbarRow ul{
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+   
+    margin: 0.5vmax auto;
+    margin-left: 2vmax;
+    
+}
+
+.secondNavbarRow ul>li{
+    list-style: none;
+   
+}
+
+.secondNavbarRow ul a{
+    text-decoration: none;
+    color: #251f1f;
+    font-family: 'Helvetica Neue',sans-serif;
+    font-size: 1vmax;
+    margin:auto 1vmax;
+}
+
+.lastNavLink{
+    margin: 0.5vmax auto;
+}
+.lastNavLink a{
+    text-decoration: none;
+    color: #251f1f;
+    font-family: 'Helvetica Neue',sans-serif;
+    font-size: 1vmax;
+   
+}
+
+
+
+/* .seconNav>.secondNavItem>{
+    text-align: center;
+    display: flex;
+}
+
+.seconNav>.secondNavItem>.secondNavLink{
+    color: #251f1f;
+    font-family: 'Helvetica Neue',sans-serif;
+    font-size: 1.2vmax;
+  
+} */
+
+@media screen and (max-width:805px) {
+    .navBarBrand span{
+        display: none;
+    }
+    .navBarBrand img{
+      margin-left: 1vmax;
+        max-width: 15vmax;
+    }
+
+    .secondNavbarRow ul{
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+          
+    }
+
+    .firstRow>li span{
+       display: none;
+    }
+
+    .lastNavLink a{
+      margin-left: 6.5vmax;
+       
+    }
+  
+    .secondCol{
+        padding: 1vmax;
+    }
+    
+}
+
+@media screen and (max-width:700px) {
+
+    .secondNavbarRow ul a{
+      
+        font-size: 2vmax;
+        
+    }
+    
+    
+    .lastNavLink a{
+     
+        font-size: 2vmax;
+        margin-left: 7vmax;
+       
+    }
+
+}
+
+@media screen and (max-width:500px) {
+    .contactInfor>span{
+       
+        font-size: 2vmax;
+        
+    }
+    
+    .contactInfor > span a{
+      
+        font-size: 1.6vmax;
+        
+    }
+    .navBarBrand img{
+        margin-left: 3vmax;
+          max-width: 15vmax;
+      }
+
+}

@@ -1,0 +1,174 @@
+.LoginTitle{
+    margin: 3vmax auto;
+    text-align: center;
+    color: #454545;
+    font-size: 3vmax;
+    font-weight: 400;
+    font-family: 'Helvetica Neue',sans-serif;
+}
+
+.LoginForm{
+
+    border: 2px solid #454545c2;
+    max-width: 42vmax;
+    min-height: 25vmax;
+    margin: 3.4vmax auto;
+    padding: 2vmax;
+    box-shadow: 5px 5px 5px #454545;
+
+}
+
+.Loginheading{
+    border-bottom: 1px solid #292929;
+    font-family:'Helvetica Neue',sans-serif ;
+    font-size: 1vmax ;
+    font-weight:bold ;
+    padding-bottom: 0.5vmax;
+}
+
+.nextButton{
+    margin: 3.4vmax auto;
+  background-color: #f4ae1a;
+    width: 100%;
+    border-radius: 2vmax;
+    padding: 0.6vmax;
+    color: #292929;
+    font-size: 1.4vmax;
+    font-weight: 400;
+    cursor: pointer;
+    
+}
+
+.label{
+     margin-top: 1vmax;
+    font-family:'Helvetica Neue',sans-serif ;
+    font-size: 1vmax ;
+    font-weight:525 ;
+   
+}
+
+.formInput{
+    margin-top: 1vmax;
+    padding: 1vmax;
+}
+
+
+.prevButton, .signinButton{
+    margin: 3vmax auto;
+    width: 100%;
+    border-radius: 2vmax;
+    padding: 0.7vmax;
+    color: #292929;
+    font-size: 1.4vmax;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.signinButton{
+    background-color: #f4ae1a;
+}
+.loginParagraph{
+  
+  margin-top: 0.4vmax;
+    font-size: 1vmax ;
+  
+    
+}
+
+@media screen and (max-width:810px) {
+
+    .Loginheading{
+    
+        font-size: 1.3vmax ;
+      
+    }
+    
+    .label{
+  
+       
+        font-size: 1.3vmax ;
+    
+       
+    }
+
+    .loginParagraph{
+  
+  
+        font-size: 1.3vmax ;
+      
+        
+    }
+}
+@media screen and (max-width:680px) {
+
+    .Loginheading{
+    
+        font-size: 1.5vmax ;
+      
+    }
+    
+    .label{
+  
+       
+        font-size: 1.5vmax ;
+    
+       
+    }
+
+    .loginParagraph{
+  
+  
+        font-size: 1.5vmax ;
+      
+        
+    }
+}
+@media screen and (max-width:550px) {
+
+    .Loginheading{
+    
+        font-size: 1.7vmax ;
+      
+    }
+    
+    .label{
+  
+       
+        font-size: 1.7vmax ;
+    
+       
+    }
+
+    .loginParagraph{
+  
+  
+        font-size: 1.7vmax ;
+      
+        
+    }
+}
+
+@media screen and (max-width:450px) {
+
+    .Loginheading{
+    
+        font-size: 1.7vmax ;
+      
+    }
+    
+    .label{
+  
+       
+        font-size: 1.7vmax ;
+    
+       
+    }
+
+    .loginParagraph{
+  
+  
+        font-size: 1.7vmax ;
+      
+        
+    }
+}

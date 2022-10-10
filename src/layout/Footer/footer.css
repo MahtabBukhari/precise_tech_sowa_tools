@@ -1,0 +1,82 @@
+
+footer{
+    margin-top: 10vmax;
+}
+
+.topFooter{
+    background-color:#000;
+}
+
+.footerTopRow{
+    display: flex;
+align-items: center;
+padding: 1vmax;
+}
+
+.topLeftPart>strong{
+    color: #f4ae1a;
+    font-family: 'Helvetica Neue',sans-serif;
+    font-weight: bold;
+    font-size: 2vmax;
+
+}
+
+.topLeftPart>span{
+    color: white;
+    font-family:'Helvetica Neue',sans-serif; 
+    font-weight: 500;
+    margin-left: 0.4vmax;
+}
+
+.topRightPart{
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+.bottomFooter{
+    background-color: #f4ae1a;
+  box-sizing: border-box;
+
+}
+
+.bottomRowBottom>div{
+margin-top: 3vmax;
+}
+
+.bottomFooter li{
+    list-style: none;
+   
+}
+
+
+.bottomFooter li>img{
+    display: flex;
+    flex-direction: row;
+    width: 40px;
+    height: 40px;
+}
+
+
+
+.footerUi{
+    display: flex;
+    flex-direction: column;
+ 
+    align-items: flex-start;
+}
+
+.iconBottom>ul{
+    display: flex !important;
+  flex-direction: row;
+}
+
+.iconBottom>ul>li{
+    margin: 0.2vmax;
+}
+
+.findText{
+    color: #428bca;
+    font-family: 'Helvetica Neue',sans-serif;
+    font-weight: 800;
+}
