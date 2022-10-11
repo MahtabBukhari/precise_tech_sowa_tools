@@ -5,6 +5,7 @@ import Header from './layout/Header';
 import Footer from './layout/Footer';
 import Home from './Screen/HomePage';
 import Login from './Screen/LoginPage';
+import ReactTables from './Screen/ReactTables.js/index.js';
 
 
 const App = () => {
@@ -15,6 +16,7 @@ const App = () => {
       <Routes>
       <Route exact path='/'  element={<Home />}/>
       <Route exact path='/login' element={<Login/>}/>
+      <Route exact path='/table' element={<ReactTables/>}/>
       
 
       </Routes>
