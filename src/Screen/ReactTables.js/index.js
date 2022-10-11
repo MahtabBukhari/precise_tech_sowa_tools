@@ -41,7 +41,7 @@ const Bcolumns = [
   {
     Header:"ID",
     accessor:'id',
-    Filter:ColumnFilter,//we cannot revome that filter directly so we use below disableFilter prop
+    // Filter:ColumnFilter,//we cannot revome that filter directly so we use below disableFilter prop
     disableFilters:true
   }
   ,
@@ -49,13 +49,13 @@ const Bcolumns = [
   {
     Header: "Name",
     accessor: "name",
-    Filter:ColumnFilter,
+   
 
   },
   {
     Header: "Age",
     accessor: "age",
-    Filter:ColumnFilter
+   
   },
 ];
 
@@ -63,6 +63,11 @@ const ReactTables = () => {
 
   const data = useMemo(() => Bdata, []);
   const columns = useMemo(() => Bcolumns, []);
+  const defaultColumn = useMemo(()=>{
+    return {
+      Filter:ColumnFilter
+    }
+  },[])
 
   const {
     getTableProps,
@@ -72,7 +77,7 @@ const ReactTables = () => {
     prepareRow,
     state,
     setGlobalFilter
-  } = useTable({ columns, data }, useFilters,useGlobalFilter ,useSortBy);
+  } = useTable({ columns,defaultColumn,data }, useFilters,useGlobalFilter ,useSortBy);
 
   const { globalFilter } = state;
 
