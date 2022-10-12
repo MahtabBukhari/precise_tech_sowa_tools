@@ -1,9 +1,10 @@
 import React, { useMemo } from "react";
 import "./ReactTables.css";
 import { Button, Table } from "react-bootstrap";
-import { useFilters, useGlobalFilter, usePagination, useSortBy, useTable } from "react-table";
+import { useFilters, useGlobalFilter, usePagination, useRowSelect, useSortBy, useTable } from "react-table";
 import GlobalFilter from "./GlobalFilter";
 import ColumnFilter from "./ColumnFilter";
+import { CheckBox } from "./CheckBox";
 
 const Bdata = [
   {
@@ -119,8 +120,31 @@ const ReactTables = () => {
     prepareRow,
     setPageSize,
     state,
-    setGlobalFilter
-  } = useTable({ columns,defaultColumn,data,initialState:{pageIndex:1}}, useFilters,useGlobalFilter ,useSortBy,usePagination);
+    setGlobalFilter,
+    selectedFlatRows
+  } = useTable({ columns,defaultColumn,data,initialState:{pageIndex:1}}, useFilters,useGlobalFilter ,useSortBy,usePagination,useRowSelect
+    ,(hooks)=>{
+      hooks.visibleColumns.push((columns=>{
+        return[
+          {
+            id:'selection',
+            Header:({ getToggleAllRowsSelectedProps})=>(
+
+              <CheckBox{...getToggleAllRowsSelectedProps()}/>
+
+            ),
+
+            Cell:(({row})=>(
+              <CheckBox  {...row.getToggleRowSelectedProps()}/>
+            ))
+
+          },
+          ...columns
+        ]
+      }))
+
+    }
+    );
 
   const { globalFilter,pageSize,pageIndex} = state;
 
@@ -195,6 +219,20 @@ const ReactTables = () => {
         <Button variant="primary" className="ml-5" onClick={()=>nextPage()} disabled={!canNextPage}>Next</Button>
         <Button variant="primary" className="ml-5" onClick={()=>gotoPage(pageCount-1)} disabled={!canNextPage}>{'>>'}</Button>
 
+      </div>
+
+      <div>
+        <pre>
+          <code>
+            {
+              JSON.stringify(
+                {
+                  selectedFlatRows:selectedFlatRows.map(row=>row.original),
+                },null,2
+              )
+            }
+          </code>
+        </pre>
       </div>
     </>
   );
