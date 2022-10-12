@@ -119,7 +119,7 @@ const ReactTables = () => {
     prepareRow,
     state,
     setGlobalFilter
-  } = useTable({ columns,defaultColumn,data }, useFilters,useGlobalFilter ,useSortBy,usePagination);
+  } = useTable({ columns,defaultColumn,data,initialState:{pageIndex:1}}, useFilters,useGlobalFilter ,useSortBy,usePagination);
 
   const { globalFilter,pageIndex } = state;
 
