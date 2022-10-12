@@ -117,11 +117,12 @@ const ReactTables = () => {
     gotoPage,
     pageCount,
     prepareRow,
+    setPageSize,
     state,
     setGlobalFilter
   } = useTable({ columns,defaultColumn,data,initialState:{pageIndex:1}}, useFilters,useGlobalFilter ,useSortBy,usePagination);
 
-  const { globalFilter,pageIndex } = state;
+  const { globalFilter,pageSize,pageIndex} = state;
 
 
   return (
@@ -180,6 +181,15 @@ const ReactTables = () => {
             gotoPage(pageNumber)
           }}  style={{width:'6vmax'}}/>
         </span>
+        <select className='ml-3 p-1' value={pageSize} onChange={e=> setPageSize(Number(e.target.value))} >
+          {
+            [10,25,50,100].map(pageSize=>(
+
+              <option key={pageSize} value={pageSize}>show {pageSize}</option>
+
+            ))
+          }
+        </select>
         <Button variant="primary" className="ml-5" onClick={()=>gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</Button>
         <Button variant="primary" className="ml-5" onClick={()=>previousPage()} disabled={!canPreviousPage}>Prev</Button>
         <Button variant="primary" className="ml-5" onClick={()=>nextPage()} disabled={!canNextPage}>Next</Button>
