@@ -1,7 +1,7 @@
 import React, { useMemo } from "react";
 import "./ReactTables.css";
-import { Table } from "react-bootstrap";
-import { useFilters, useGlobalFilter, useSortBy, useTable } from "react-table";
+import { Button, Table } from "react-bootstrap";
+import { useFilters, useGlobalFilter, usePagination, useSortBy, useTable } from "react-table";
 import GlobalFilter from "./GlobalFilter";
 import ColumnFilter from "./ColumnFilter";
 
@@ -35,6 +35,41 @@ const Bdata = [
     id:6,
     name: "Dhoni",
     age: 37,
+  },
+  {
+    id:7,
+    name: "Dhoni",
+    age: 37,
+  },
+  {
+    id:8,
+    name: "Dhoni",
+    age: 37,
+  },
+  {
+    id:9,
+    name: "Dhoni",
+    age: 37,
+  },
+  {
+    id:10,
+    name: "Dhoni",
+    age: 37,
+  },
+  {
+    id:11,
+    name: "Dhoni",
+    age: 37,
+  },
+  {
+    id:12,
+    name: "Dhoni",
+    age: 37,
+  },
+  {
+    id:13,
+    name: "boomb",
+    age: 50,
   },
 ];
 const Bcolumns = [
@@ -73,13 +108,18 @@ const ReactTables = () => {
     getTableProps,
     getTableBodyProps,
     headerGroups,
-    rows,
+    page,
+    nextPage,
+    previousPage,
+    canNextPage,
+    canPreviousPage,
+    pageOptions,
     prepareRow,
     state,
     setGlobalFilter
-  } = useTable({ columns,defaultColumn,data }, useFilters,useGlobalFilter ,useSortBy);
+  } = useTable({ columns,defaultColumn,data }, useFilters,useGlobalFilter ,useSortBy,usePagination);
 
-  const { globalFilter } = state;
+  const { globalFilter,pageIndex } = state;
 
 
   return (
@@ -110,7 +150,7 @@ const ReactTables = () => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row, i) => {
+          {page.map((row, i) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
@@ -124,6 +164,17 @@ const ReactTables = () => {
           })}
         </tbody>
       </Table>
+      <div style={{margin:'1vmax 0 0 50vmax'}}>
+        <span>
+          page{' '}
+          <strong>
+            {pageIndex+1} of {pageOptions.length}
+          </strong>
+        </span>
+        <Button variant="primary" className="ml-4" onClick={()=>previousPage()} disabled={!canPreviousPage}>Prev</Button>
+        <Button variant="primary" className="ml-5" onClick={()=>nextPage()} disabled={!canNextPage}>Next</Button>
+
+      </div>
     </>
   );
 };
