@@ -14,10 +14,10 @@ table {
   
 tbody tr:hover {background-color: #ddd;}
    */
- thead th {
+ /* thead th {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
     background-color: #aa9104;
     color: black;
-  }
+  } */

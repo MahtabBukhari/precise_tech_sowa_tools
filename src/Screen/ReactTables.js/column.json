@@ -1,0 +1,16 @@
+[
+    {
+      "Header": "ID",
+      "accessor": "id",
+     
+      "disableFilters": true
+    },
+    {
+      "Header": "Name",
+      "accessor": "name"
+    },
+    {
+      "Header": "Age",
+      "accessor": "age"
+    }
+  ]
