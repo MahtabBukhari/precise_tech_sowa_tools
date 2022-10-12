@@ -114,6 +114,8 @@ const ReactTables = () => {
     canNextPage,
     canPreviousPage,
     pageOptions,
+    gotoPage,
+    pageCount,
     prepareRow,
     state,
     setGlobalFilter
@@ -164,15 +166,24 @@ const ReactTables = () => {
           })}
         </tbody>
       </Table>
-      <div style={{margin:'1vmax 0 0 50vmax'}}>
+      <div style={{margin:'1vmax 0 0 30vmax'}}>
         <span>
           page{' '}
           <strong>
             {pageIndex+1} of {pageOptions.length}
           </strong>
         </span>
-        <Button variant="primary" className="ml-4" onClick={()=>previousPage()} disabled={!canPreviousPage}>Prev</Button>
+        <span>
+         {' '} | Go To Page{' '}
+          <input type="number" defaultValue={pageIndex+1} onChange={e=>{
+            const pageNumber = e.target.value? Number(e.target.value) - 1:0;
+            gotoPage(pageNumber)
+          }}  style={{width:'6vmax'}}/>
+        </span>
+        <Button variant="primary" className="ml-5" onClick={()=>gotoPage(0)} disabled={!canPreviousPage}>{'<<'}</Button>
+        <Button variant="primary" className="ml-5" onClick={()=>previousPage()} disabled={!canPreviousPage}>Prev</Button>
         <Button variant="primary" className="ml-5" onClick={()=>nextPage()} disabled={!canNextPage}>Next</Button>
+        <Button variant="primary" className="ml-5" onClick={()=>gotoPage(pageCount-1)} disabled={!canNextPage}>{'>>'}</Button>
 
       </div>
     </>
