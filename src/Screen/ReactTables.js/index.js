@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import "./ReactTables.css";
 import { Button, Table } from "react-bootstrap";
 import Bdata from './data.json'
@@ -19,9 +19,31 @@ import { CheckBox } from "./CheckBox";
 
 
 const ReactTables = () => {
+  
 
-  const data = useMemo(() => Bdata, []);
+  const [apiData, setApiData]=useState(Bdata)
+
+
+
+  const data = useMemo(() => apiData, [apiData]);
   const columns = useMemo(() => Bcolumns, []);
+
+
+  
+  const onEdit=(getRowValue)=>{
+    console.log(getRowValue)
+  
+   
+ 
+
+  }
+
+
+  const onDelete=(deleteRowId)=>{
+   const newdata= apiData.filter(api=>  api.id!==deleteRowId)
+   setApiData(newdata)
+
+  }
 
 
   const defaultColumn = useMemo(() => {
@@ -49,8 +71,8 @@ const ReactTables = () => {
           Header: "Action",
           Cell: ({ row }) => (
             <>
-              <Button>edit</Button>
-              <Button>delete</Button>
+              <Button className="mr-1"  onClick={()=>onEdit(row.values)}>✍️</Button>
+              <Button className="ml-1"  onClick={()=>onDelete(row.values.id)} >❌</Button>
             </>
           ),
         },
@@ -76,8 +98,8 @@ const ReactTables = () => {
     state,
     setGlobalFilter,
     selectedFlatRows,
-  } = useTable(
-    { columns, defaultColumn, data, initialState: { pageIndex: 1 } },
+  } = useTable(                  //initialState: { pageIndex: 1 }
+    { columns, defaultColumn, data                                 },
     useFilters,
     useGlobalFilter,
     useSortBy,
