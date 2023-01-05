@@ -37,7 +37,7 @@ export const UserLogin=(email,password)=>(dispatch)=>{
         dispatch({type:LOGIN_REQUEST})  // it work if we fetch data from backend and data take some time to come
 
 
-        if(email==='test@gmail.com' && password==='123456'){
+        if(email || password){
             dispatch({type:LOGIN_SUCCESS,payload:'User'})
         }else if(email==='mahtab@gmail.com' && password==='1234'){
             dispatch({type:LOGIN_SUCCESS,payload:'Admin'})
